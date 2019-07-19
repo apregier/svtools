@@ -21,8 +21,8 @@ class InputStream(object):
             logging.basicConfig(
 		format="%(created)0.3f %(levelname)s %(name)s %(message)s",
 		level=logging.INFO)
-	    logging.getLogger("gcsfs.core").setLevel(logging.EXCEPTION)
-	    logging.getLogger("gcsfs.gcsfs").setLevel(logging.EXCEPTION) 
+	    logging.getLogger("gcsfs.core").setLevel(logging.WARNING)
+	    logging.getLogger("gcsfs.gcsfs").setLevel(logging.WARNING) 
 	    #Note: this will only work on the cloud
 	    #If you have to run outside the cloud you could authenticate
 	    #with `gcloud auth application-default login` but this is
