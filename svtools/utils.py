@@ -17,6 +17,12 @@ class InputStream(object):
         elif string.startswith('gs:'):
 	    import gcsfs
 	    import google.auth
+	    import logging
+            logging.basicConfig(
+		format="%(created)0.3f %(levelname)s %(name)s %(message)s",
+		level=logging.INFO)
+	    logging.getLogger("gcsfs.core").setLevel(logging.DEBUG)
+	    logging.getLogger("gcsfs.gcsfs").setLevel(logging.DEBUG) 
 	    #Note: this will only work on the cloud
 	    #If you have to run outside the cloud you could authenticate
 	    #with `gcloud auth application-default login` but this is
